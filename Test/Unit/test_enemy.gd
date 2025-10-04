@@ -9,9 +9,10 @@ func before_each():
 	enemy = autofree(enemy_scene.instantiate())
 	add_child(enemy)
 	
-	#Load and instantiate the player scene
-	var player_scene = load("res://scenes/player.tscn")
-	player = autofree(player_scene.instantiate())
+	# Mock a CharacterBody2D instead of the actual player scene because
+	# the player scene requires a canvas layer node which we we would have 
+	# to instantiate additionally
+	player = autofree(CharacterBody2D.new())
 	add_child(player)
 	
 
