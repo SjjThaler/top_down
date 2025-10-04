@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://nnxnoqia4ytj"]
+[gd_scene load_steps=12 format=4 uid="uid://nnxnoqia4ytj"]
 
 [ext_resource type="Texture2D" uid="uid://b13xsdja5mdjk" path="res://Pixel Art Top Down - Basic v1.2.2/Texture/TX Tileset Grass.png" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://c0ay7fa7oai8o" path="res://Pixel Art Top Down - Basic v1.2.2/Texture/TX Tileset Stone Ground.png" id="2_tefeu"]
 [ext_resource type="Texture2D" uid="uid://w5mliuy84oee" path="res://Pixel Art Top Down - Basic v1.2.2/Texture/TX Props.png" id="3_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://cffwsi3gtc7v4" path="res://Pixel Art Top Down - Basic v1.2.2/Texture/TX Struct.png" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://csnqy20yrcxib" path="res://scenes/player.tscn" id="5_85g3d"]
+[ext_resource type="PackedScene" uid="uid://cvos6rlkytrcl" path="res://scenes/enemy.tscn" id="6_tefeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_choun"]
 texture = ExtResource("1_tbgi4")
@@ -367,6 +368,7 @@ tile_set = SubResource("TileSet_a8y0u")
 
 [node name="Player" parent="." instance=ExtResource("5_85g3d")]
 position = Vector2(551, 209)
+metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
@@ -398,3 +400,6 @@ offset_bottom = 0.038
 grow_horizontal = 2
 grow_vertical = 2
 text = "Test"
+
+[node name="enemy" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(797, 236)
