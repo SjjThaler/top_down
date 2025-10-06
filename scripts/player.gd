@@ -1,19 +1,15 @@
 extends CharacterBody2D
 var speed = 400
-@onready var label: Label = $"../CanvasLayer/Control/Label"
-var input_label
-
-func a_string():
-	return "hey!"
+# Send the input coordinates through a signal so that the player node
+# is independent from the Player_Display node. This allows us to test
+# the player node without getting the canvas node. 
+signal input_changed(input_vector)
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
-	input_label = input_direction
 	velocity = input_direction * speed
+	input_changed.emit(input_direction)
 	
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
-
-func _process(_delta):
-	label.text = str(input_label)
