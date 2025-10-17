@@ -5,11 +5,26 @@ var speed = 400
 # the player node without getting the canvas node. 
 signal input_changed(input_vector)
 
+enum States {MOVE, FIGHTING}
+var state: States = States.MOVE
+
+func _ready():
+	var enemy = get_node("../enemy")
+	enemy.fight.connect(_on_fight)
+
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
 	input_changed.emit(input_direction)
 	
 func _physics_process(_delta):
-	get_input()
-	move_and_slide()
+	if state == States.MOVE:
+		get_input()
+		move_and_slide()
+	elif state == States.FIGHTING:
+		pass
+
+func _on_fight():
+	state = States.FIGHTING
+	print("Player fighting!")
+		

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dh4k75vidsg4f" path="res://scripts/enemy.gd" id="1_md0e3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
-radius = 44.64303
+radius = 213.39635
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
 size = Vector2(26, 26)
@@ -21,6 +21,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+position = Vector2(4, -1)
 shape = SubResource("CircleShape2D_md0e3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

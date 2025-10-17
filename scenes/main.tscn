@@ -502,3 +502,9 @@ text = "Test"
 
 [node name="enemy" parent="." instance=ExtResource("6_tefeu")]
 position = Vector2(797, 236)
+
+[node name="enemy2" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(954, 230)
+
+[node name="enemy3" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(877, 140)
