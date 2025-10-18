@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvos6rlkytrcl"]
+[gd_scene load_steps=6 format=3 uid="uid://cvos6rlkytrcl"]
 
 [ext_resource type="Texture2D" uid="uid://7oddg7lhx3wk" path="res://icon.svg" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://dh4k75vidsg4f" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="Script" uid="uid://bkypbbsswgfyk" path="res://scripts/enemy states/StateMachine.gd" id="3_4ra3w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
 radius = 213.39635
@@ -26,6 +27,9 @@ shape = SubResource("CircleShape2D_md0e3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4ra3w")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_4ra3w")
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
