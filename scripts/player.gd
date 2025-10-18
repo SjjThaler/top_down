@@ -19,11 +19,16 @@ func get_input():
 	
 func _physics_process(_delta):
 	if state == States.MOVE:
-		get_input()
-		move_and_slide()
+		move()
 	elif state == States.FIGHTING:
-		pass
+		fighting()
+	
+func move():
+	get_input()
+	move_and_slide()
 
+func fighting():
+	pass
 func _on_fight():
 	state = States.FIGHTING
 	print("Player fighting!")
